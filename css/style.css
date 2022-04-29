@@ -1,0 +1,69 @@
+:root{
+    --loving-blue: rgb(0, 153, 255);
+    --whiter-than-white: #fafafa;
+}
+
+/*
+The great reset
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: Kumbh Sans, sans-serif;
+}
+
+/*
+The header
+*/
+
+h2{
+    font-family: Bree Serif, serif;
+    font-size: 3rem;
+}
+
+header{
+    background-color: var(--whiter-than-white);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--loving-blue)
+}
+
+/* 
+hide main nav on small screens
+*/
+header nav{
+    display: none;
+}
+/* 
+Ensure the color of the header title is white
+*/
+header h2{
+    color: var(--whiter-than-white);
+}
+
+section.hero{
+    background-image: url(../images/mobile/image-header.jpg);
+    background-size: cover;
+    background-position: bottom;
+    min-height: 30rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+}
+section.hero h2{
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--whiter-than-white);
+    margin-top: 2rem;
+    text-align: center;
+    line-height: 2.5rem;
+}
