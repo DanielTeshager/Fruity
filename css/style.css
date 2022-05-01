@@ -10,6 +10,8 @@
 The great reset
 */
 
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -34,45 +36,6 @@ main{
     grid-template-rows: auto 1fr;
     grid-template-areas:
         "header"
-        "transform_img"
-        "transform_text"
-        "standout_img"
-        "standout_text"
-        "graphics_design"
-        "photography"
-        "footer";
-
-
-}
-
-h2{
-    font-family: Bree Serif, serif;
-    font-size: 3rem;
-    color: var(--whiter-than-white);
-}
-
-header{
-    background-color: var(--whiter-than-white);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--loving-blue)
-}
-
-/* 
-hide main nav on small screens
-*/
-header nav{
-    display: none;
-}
-
-main{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-        "header"
         "hero"
         "transform_img"
         "transform_txt"
@@ -89,6 +52,29 @@ main{
     height: 100vh;
 }
 
+h2{
+    font-family: Bree Serif, serif;
+    font-size: 3rem;
+    color: var(--whiter-than-white);
+}
+
+header{
+    background-color: var(--whiter-than-white);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--loving-blue);
+    grid-area: header;
+}
+
+/* 
+hide main nav on small screens
+*/
+header nav{
+    display: none;
+}
+
 .hero{
     grid-area: hero;
     background-image: url("../images/desktop/image-header.jpg");
@@ -103,6 +89,7 @@ main{
     background-position: center;
     background-repeat: no-repeat;
     min-height: 35rem;
+    padding-top: 5rem;
 }
 section.transform_img{
     background-image: url("../images/desktop/image-transform.jpg");
@@ -118,7 +105,12 @@ section.transform_img, section.standout_img{
     background-repeat: no-repeat;
     min-height: 35rem;
 }
-
+section.transform_txt{
+    grid-area: transform_txt;
+}
+section.standout_txt{
+    grid-area: standout_txt;
+}
 section.transform_txt, section.standout_txt{
     min-height: 20rem;
     height: 100%;
@@ -259,6 +251,53 @@ section.products .product img{
     width: 100%;
 }
 
+footer{
+    background-color: var(--footer-green);
+    padding: 2rem;
+    text-align: center;
+    grid-area: footer;
+}
+
+footer h2.footer-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--whiter-than-white);
+    text-align: center;
+    line-height: 1.5rem;
+    padding: 0 2rem;
+    font-family: bree serif, serif;
+}
+
+footer .footer-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+footer .social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+footer .footer-nav li a{
+    font-size: .7rem;
+    font-weight: 300;
+    color: var(--whiter-than-white);
+    text-decoration: none;
+    font-family: roboto, sans-serif;
+    text-transform: uppercase;
+}
+footer .footer-nav li a :hover{
+    color: var(--loving-black);
+} 
+
 @media only screen and (min-width: 768px) {
     /* tablets and desktop */
     header nav{
@@ -293,6 +332,81 @@ section.products .product img{
     header nav ul li:hover a, header nav ul li.active a{
         color: var(--loving-black);
     }
+
+    section.hero{
+        background-position: bottom;
+    }
+    /* put standout_img and standout_text side by side */
+    main{
+        /* display: grid; */
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        /* grid-template-areas: 
+            "header"
+            "hero"
+            "transform_img transform_txt"
+            "standout_img standout_txt"
+            "graphics_design photography"
+            "testimonials"
+            "products"
+            "footer";
+        */
+        }
+
+    section.transform_img{
+        grid-column: 1;
+        grid-row: 3
+    }
+    section.transform_txt{
+        grid-column: 2;
+        grid-row: 3;
+    }
+    section.standout_img{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    section.standout_txt{
+        grid-column: 2;
+        grid-row: 4;
+    }
+    section.creative{
+        grid-column: 1;
+        grid-row: 5;
+    }
+    section.photography{
+        grid-column: 2;
+        grid-row: 5;
+    }
+ 
+    section.testimonials, 
+    section.products,
+    section.hero,
+    header,footer{
+        grid-column: span 2;
+    }
+    
+    section.testimonials .cards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section.transform_img, section.standout_img{
+        min-height: 25rem;
+    }
+    section.transform_txt, section.standout_txt{
+        min-height: 20rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem; 
+        justify-content: center;
+        max-width: 700px;
+
+    }
+ 
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
