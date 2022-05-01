@@ -1,2 +1,8 @@
-# ignore design folder
-design/
+# dependencies
+
+# design
+/design
+# production
+
+# misc
+.DS_Store
