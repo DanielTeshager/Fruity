@@ -1,4 +1,4 @@
-# Pomodoro Time management App
+# Fruity Responsive Website
 
 
 ## Table of contents
@@ -15,20 +15,19 @@
 Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
-- See active/selected states for all interactive elements on the page
-- set timer parameters such as pomodoros and break lengths
-- start and stop the timer
-- change skin color and fonts
+- View hover state of the buttons
+- Toggle menu on and off on mobile devices 
+
 
 
 ### Screenshot
 
-![](./assets/pomodoro3.gif)
+![](./images/Fruity3.gif)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/DanielTeshager/Pomodoro)
+- Solution URL: [Add solution URL here](https://github.com/DanielTeshager/fruity)
 - Live Site URL: [Add live site URL here](https://6268db3086756d5d98c385d5--cozy-crostata-99c3a6.netlify.app/)
 ### Built with
 - HTML
@@ -39,7 +38,7 @@ Users should be able to:
 - JavaScript
 
 ### Continued development
-I'll be working on this project in the future. Improving code qualit, UI and add more features are the main priorities.
+I'll be working on this project in the future. I'll be adding more pages and features.
 
 ## Author
 
